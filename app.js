@@ -21,7 +21,7 @@ var tw = new twitter({
 });
 
 var stream = null,
-  track = "esturniolo, retux, nicovellonok",
+  track = "esturniolo, retux, nicovellonok, boudou",
   users = [];
 
 app.set('views', __dirname + '/views');
@@ -34,14 +34,12 @@ ioServer.sockets.on("connection", function(socket){
     }
     main.logConnectedUsers(users);
     socket.on("start stream", function(){
-        console.log("starting the streaming")
         if(stream == null){
             tw.stream("statuses/filter",{
                 track: track
             }, function(s){
                stream = s ;
                stream.on("data", function(data){
-                   console.log('payload: ' + data.toString());
                    if(users.length > 0){
                        socket.broadcast.emit('new tweet', data);
                        socket.emit('new tweet', data);

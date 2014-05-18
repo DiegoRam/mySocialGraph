@@ -4,10 +4,10 @@
 var socket = io.connect();
 $(document).ready(function(){
     socket.on('new tweet',function(tweet){
-        console.log("new tweet: " + JSON.stringify(tweet));
+         $('#messages').append(divSystemContentElement(JSON.stringify(tweet)));
     });
     socket.on('connected',function(r){
-        console.log("tracking: " + r.tracking);
+        $('#tracking').append(divSystemContentElement(JSON.stringify(r.tracking)));
         emitMsj("start stream");
     });
 });
@@ -19,4 +19,12 @@ function emitMsj(signal, o) {
     else {
         alert("Shit! Socket.io didn't start!");
     }
+}
+
+function divEscapedContentElement(message){
+    return $('<div></div>').text(message);
+}
+
+function divSystemContentElement(message){
+    return $('<div></div>').html('<i>' + message + '</i>');
 }
