@@ -1,7 +1,14 @@
 module.exports = {
-  home: home
+  home: home,
+  logConnectedUsers: logConnectedUsers
 }
 
 function home(req, res){
-  res.send("Hello cat");
+  res.render("index");
+}
+
+function logConnectedUsers(users){
+    console.log("================CONNECTED USERS==============");
+    console.log("=======  ::   " + users.length);
+    console.log("=============================================");
 }
