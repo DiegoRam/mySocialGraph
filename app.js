@@ -4,9 +4,9 @@ var fs = require("fs"),
   app = express(),
   io = require("socket.io"),
   twitter = require("ntwitter"),
-  port = 9500,
   main = require("./src/controllers/main");
 
+var port = Number(process.env.PORT || 9500);
 var server = http.createServer(app).listen(port,function(){
   console.log("Express listening on port: " + port );
 });
