@@ -4,12 +4,22 @@ html(lang="en")
     title @esturniolo eat it
     script(src = "/socket.io/socket.io.js")
     script(src = "http://code.jquery.com/jquery-1.8.0.min.js")
-    script(src= "/js/eventhandler.js")
-    script(type="text/javascript")
-
+    script(src = "/js/eventhandler.js")
+    script(src = "/js/bootstrap.min.js")
+    link(rel="stylesheet", href="/css/bootstrap.css")
     body
-        h2 Streaming
-        h3 tranking to
-        div#tracking
-        hr
-        div#messages
+        nav.navbar.navbar-default(role="navigation")
+            div.container-fluid
+                div.navbar-header
+                    a.navbar-brand(href="#") @esturniolo streamer
+        div.row
+            .col-md-8
+                .panel.panel-default
+                    .panel-heading mumbo jumbo
+                    .panel-body
+                        ul#tweetlist
+
+            .col-md-4
+                .panel.panel-default
+                    .panel-heading keywords
+                    .panel-body#tracking
