@@ -14,10 +14,10 @@ var server = http.createServer(app).listen(port,function(){
 var ioServer = io.listen(server);
 
 var tw = new twitter({
-  consumer_key: "5gENEcDsjcUgtShz75IuRQaaJ",
-  consumer_secret: "mJdXN5cql9KkIImjCci3VDa7Z60nAxfWOYbDdYNQRWqOIwIp7Q",
-  access_token_key: "17760769-sxqFcpWjiV08vYe9dwHBownPBfarv2U1o0r0yiPES",
-  access_token_secret: "ZQdiHsWJJFX6EexysKhMwL6PhMq92QxjlhcAD34UxL5g0"
+  consumer_key: "YOUR_CONSUMER_KEY",
+  consumer_secret: "YOUR_CONSUMER_SECRET",
+  access_token_key: "XXXXX",
+  access_token_secret: "XXXXX"
 });
 
 var stream = null,
